@@ -8,7 +8,12 @@ spring:
     username: root
     password: ${DB_PASSWORD}
 
-# springdoc-openapi项目配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
@@ -20,7 +25,7 @@ springdoc:
     - group: 'first'
       paths-to-match: '/**'
       packages-to-scan: io.github.mars736.springboot_test.controller
-# knife4j的增强配置，不需要增强可以不配
+
 knife4j:
   enable: true
   setting:
